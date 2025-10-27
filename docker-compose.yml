@@ -1,11 +1,11 @@
 version: "3.8"
 
 services:
-  api-gateway:
-    build: ./api-gateway
+  api_gateway:
+    build: ./api_gateway
     ports:
       - "3000:3000"
-    env_file: ./api-gateway/.env
+    env_file: ./api_gateway/.env
     depends_on:
       - redis
       - rabbitmq
@@ -13,9 +13,9 @@ services:
       - REDIS_URL=redis://redis:6379
       - RABBITMQ_URL=amqp://rabbitmq:5672
 
-  identity-service:
-    build: ./identity-service
-    env_file: ./identity-service/.env
+  identity_service:
+    build: ./identity_service
+    env_file: ./identity_service/.env
     depends_on:
       - redis
       - rabbitmq
@@ -23,9 +23,9 @@ services:
       - REDIS_URL=redis://redis:6379
       - RABBITMQ_URL=amqp://rabbitmq:5672
 
-  post-service:
-    build: ./post-service
-    env_file: ./post-service/.env
+  post_service:
+    build: ./post_service
+    env_file: ./post_service/.env
     depends_on:
       - redis
       - rabbitmq
@@ -33,9 +33,9 @@ services:
       - REDIS_URL=redis://redis:6379
       - RABBITMQ_URL=amqp://rabbitmq:5672
 
-  media-service:
-    build: ./media-service
-    env_file: ./media-service/.env
+  media_service:
+    build: ./media_service
+    env_file: ./media_service/.env
     depends_on:
       - redis
       - rabbitmq
@@ -43,9 +43,9 @@ services:
       - REDIS_URL=redis://redis:6379
       - RABBITMQ_URL=amqp://rabbitmq:5672
 
-  search-service:
-    build: ./search-service
-    env_file: ./search-service/.env
+  search_service:
+    build: ./search_service
+    env_file: ./search_service/.env
     depends_on:
       - redis
       - rabbitmq
